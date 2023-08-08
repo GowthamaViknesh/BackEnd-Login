@@ -108,7 +108,7 @@ app.post('/forgotPass', async (req, res) => {
       const token = jwt.sign({ email: olduser.email, id: olduser.id }, secret, {
         expiresIn: '5m',
       });
-      const link = `http:/localhost:5000/reset-pass/${olduser.id}/${token}`;
+      const link = `https://password-hnkb.onrender.com/reset-pass/${olduser.id}/${token}`;
 
       const transporter = nodemailer.createTransport({
         service: 'gmail',
